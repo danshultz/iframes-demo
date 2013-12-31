@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>iframe Cross Domain test</title>
+
+  <style>
+  .row {width:100%; float:left;}
+  .large-12 {width:100%; float:left;}
+  .large-4 {width:33%; float:left;}
+  .large-8 {width:66%; float:left;}
+  .registration-iframe-container {background-color:#ccc; float:left;}
+  .registration-comment-container ul {list-style-type:none;}
+  </style>
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+  <script src="twoway.js"></script>
+  <script src="parent.js"></script>
+  <script type="text/javascript">
+  </script>
+</head>
+
+<body>
+
+<div class="large-12 columns">
+    <div class="row">
+        <div class="large-12 small-12 columns">
+            <div class="page-title">
+                <h1>Register</h1>
+            </div>
+        </div>
+    </div>
+    <section class="row" id="registrationContent">
+        <div class="large-4 small-12 columns registration-comment-container">
+            <h2>Not yet a Member?
+                <br />
+                Register Now!
+            </h2>
+            <ul>
+                <li>Benefit listed here</li>
+                <li>Another benefit could be listed here</li>
+                <li>Benefit listed here</li>
+                <li>Another benefit could be listed here</li>
+            </ul>
+        </div>
+        <div class="large-8 small-12 columns registration-iframe-container">
+            <div class="row">
+                <div class="large-12 small-12 columns registration-iframe">
+                    <iframe id="frame-one" scrolling="no" frameborder="0" width="100%" src="//0.0.0.0:8000/child.html"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+</body>
+</html>
