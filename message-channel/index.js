@@ -1,6 +1,9 @@
 /*jshint browser:true*/
 (function() {
-  var onLoad = function () {
+  var openPorts = function () {
+    var button = document.querySelector('.open-port-btn');
+    button.setAttribute('disabled', 'disabled');
+
     var messageChannel = new MessageChannel();
     var p1 = messageChannel.port1;
     var p2 = messageChannel.port2;
@@ -10,6 +13,9 @@
     tryPassPort('#page-2', p2);
   };
 
+  // Try continue to try and pass the port until
+  // the iframe accepts it. This can help ensure that
+  // if the frame has not yet loaded the message will retry
   var tryPassPort = function (id, port) {
     var page = document.querySelector(id);
 
@@ -35,6 +41,9 @@
     }
   };
 
-  window.addEventListener('load', onLoad, false);
+  window.addEventListener('load', function () {
+    var button = document.querySelector('.open-port-btn');
+    button.addEventListener('click', openPorts, false);
+  });
   window.addEventListener('message', onMessage, false);
 }).call(this);

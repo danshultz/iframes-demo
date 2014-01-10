@@ -8,6 +8,7 @@
     }
 
     if (e.data === "portopen") {
+      getEl('#post-button').removeAttribute('disabled');
       port = e.ports[0];
       output('port opened');
       port.addEventListener('message', function (e) { output(e.data); });
