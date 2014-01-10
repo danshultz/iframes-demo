@@ -7,7 +7,7 @@
   var messenger = window.App.Com.messenger = new TwoWay.Messenger();
 
   // Set the domain to be used to verify cross iframe messaging
-  var parentDomain = "localhost";
+  var parentDomain = "0.0.0.0";
   var iframeId;
   var parentWindow;
 

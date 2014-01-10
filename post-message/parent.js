@@ -4,7 +4,7 @@
   this.App = { "Com": {} };
   var messenger = window.App.Com.messenger = new TwoWay.Messenger();
   // ensure domain is defined as we want to constrain who we are communicating with
-  var theDomain = "http://0.0.0.0:" + window.location.port;
+  var theDomain = "http://localhost:" + window.location.port;
 
   $(document).ready(function () {
 
